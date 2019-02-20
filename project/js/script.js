@@ -37,8 +37,6 @@ goodsBtn.forEach(function (btn, i)
         
         showConfirm();
 
-        calcGoods(1)
-
         removeBtn.classList.add('goods__item-remove');
         removeBtn.innerHTML = '&times';
         item.appendChild(removeBtn);
@@ -49,6 +47,9 @@ goodsBtn.forEach(function (btn, i)
         {
             empty.style.display = 'none';
         }
+
+        
+        calcGoods()
 
         calcTotal();
 
@@ -99,10 +100,10 @@ function showConfirm()
     }
 }
 
-function calcGoods(i)
+function calcGoods()
 {
     const items = cartWrapper.querySelectorAll('.goods__item');
-    badge.textContent = i + items.length;
+    badge.textContent = items.length;
     if (items.length == 0)
     {
         empty.style.display = '';
@@ -135,3 +136,5 @@ function removeFromCart()
         });
     });
 }
+
+
